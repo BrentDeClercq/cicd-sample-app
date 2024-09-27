@@ -7,8 +7,7 @@ if [ -d "tempdir" ]; then
     rm -r tempdir/
 fi
 
-docker stop samplerunning 
-docker rm samplerunning
+docker rm -f samplerunning
 
 # Build steps
 mkdir tempdir
