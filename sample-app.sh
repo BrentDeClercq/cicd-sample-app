@@ -2,7 +2,11 @@
 set -euo pipefail
 
 # Cleanup from previous builds
-rm -r tempdir/
+# Check if tempdir exists before attempting to remove
+if [ -d "tempdir" ]; then
+    rm -r tempdir/
+fi
+
 docker stop samplerunning 
 docker rm samplerunning
 
