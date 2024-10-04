@@ -1,0 +1,16 @@
+name: Trigger Jenkins Build
+
+on:
+  push:
+    branches:
+      - main # Change to the branch you want to trigger the action on
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Jenkins Build
+        run: |
+          curl -X POST "https://jenkins.dcbrent.tech/job/RemoteGit/build?token=testtoken" \
+          --user "admin:${{ secrets.JENKINS_API_KEY }}"
