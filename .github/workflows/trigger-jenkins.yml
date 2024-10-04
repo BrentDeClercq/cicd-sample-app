@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Trigger Jenkins Build
         run: |
-          curl -L "https://jenkins.dcbrent.tech/job/RemoteGit/build?token=testtoken" --user "admin:${{ secrets.JENKINS_API_KEY }}"
+          curl -L -s "https://jenkins.dcbrent.tech/job/RemoteGit/build?token=testtoken" --user "admin:${{ secrets.JENKINS_API_KEY }}"
